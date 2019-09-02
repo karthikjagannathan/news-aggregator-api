@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "d83a40db-3bf4-4aa0-937a-a241952e7916",
+		"name": "News Aggregator API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Scrap",
+			"item": [
+				{
+					"name": "Scrap",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"uri\": \"https://www.reddit.com/hot/.rss\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER_HOST}}/scrap",
+							"host": [
+								"{{SERVER_HOST}}"
+							],
+							"path": [
+								"scrap"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Health check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"uri\": \"https://www.reddit.com/hot/.rss\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER_HOST}}/health",
+							"host": [
+								"{{SERVER_HOST}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"uri\": \"https://www.reddit.com/hot/.rss\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER_HOST}}/login",
+							"host": [
+								"{{SERVER_HOST}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login (Fake)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@codinglife.net\"\n}"
+						},
+						"url": {
+							"raw": "{{SERVER_HOST}}/login/test",
+							"host": [
+								"{{SERVER_HOST}}"
+							],
+							"path": [
+								"login",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "/news",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER_HOST}}/news",
+							"host": [
+								"{{SERVER_HOST}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/news/bbc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER_HOST}}/news/?source=bbc",
+							"host": [
+								"{{SERVER_HOST}}"
+							],
+							"path": [
+								"news",
+								""
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "bbc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/news/reddit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{SERVER_HOST}}/news/?source=reddit",
+							"host": [
+								"{{SERVER_HOST}}"
+							],
+							"path": [
+								"news",
+								""
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "reddit"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAY29kaW5nbGlmZS5uZXQiLCJpYXQiOjE1NjcyODk0NzV9.498OKUpfabnX6PxvLbZCmr7to5z48ir9ElLtqhXl1Mk",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "197bcdaa-67f1-4dc9-88cf-074e59c68d0a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8a759db3-9e38-4052-98a6-aa270dbc7db0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

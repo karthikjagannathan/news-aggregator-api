@@ -1,0 +1,9 @@
+{
+  "appName": "newsaggregator-rest-api",
+  "logLevel": "Debug",
+  "secret": "Aw3G$h4J4?tqx%Zg",
+  "host": "localhost",
+  "port": "4000",
+  "jwt_expiretime": "360000",
+  "timeout": 30000
+}

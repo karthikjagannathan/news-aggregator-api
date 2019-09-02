@@ -1,0 +1,46 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  },
+  "env": {
+    "jasmine": true
+  }
+}
+
+// {
+//   "extends": ["airbnb", "prettier", "prettier/react"],
+//   "plugins": ["react", "prettier"],
+//   "rules": {
+//     "react/jsx-filename-extension": [
+//       1,
+//       {
+//         "extensions": [".js", "jsx"]
+//       }
+//     ],
+//     "prettier/prettier": "error",
+//     "max-len": ["error", 80]
+//   },
+//   "env": {
+//     "browser": true
+//   },
+//   "settings": {
+//     "import/resolver": {
+//       "webpack": {
+//         "config": "./config/webpack-common-config.js"
+//       }
+//     }
+//   }
+// }
+
+// {
+//   "extends": ["airbnb", "prettier"],
+//   "plugins": ["prettier"],
+//   "rules": {
+//     "prettier/prettier": ["error"]
+//   },
+//   "env": {
+//     "jasmine": true
+//   }
+// }

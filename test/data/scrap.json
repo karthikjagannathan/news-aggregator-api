@@ -1,0 +1,17 @@
+{
+  "requestObj": {
+	"uri": "https://www.reddit.com/hot/.rss"
+  },
+  "responseObj": 
+  [
+    {
+      "index": 0,
+      "id": "",
+      "author": "",
+      "category": "",
+      "link": "",
+      "updated": "",
+      "title": ""
+    }
+  ]
+}

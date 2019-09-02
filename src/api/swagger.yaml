@@ -1,0 +1,119 @@
+swagger: "2.0"
+info:
+  title: News Aggregator API Specification
+  version: "1.0"
+basePath: /
+schemes:
+  - http
+  - https
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      summary: Health check
+      description: Health check route for server
+      operationId: "getHealth"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Success message
+  /news:
+    get:
+      tags:
+        - News
+      summary: Get all news feeds
+      description: Get all news feeds
+      operationId: "news"
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Retrieved news successfully
+          schema:
+            $ref: "#/definitions/News"
+        401:
+          description: Authentication failure
+        500:
+          description: Internal error
+  /scrap:
+    post:
+      tags:
+        - Scraps
+      summary: Retrieve news scraps
+      description: Retrieve news scraps
+      operationId: "scrap"
+      produces:
+        - application/json
+      security:
+        - Bearer: []
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Input object with URI"
+          required: true
+          schema:
+            $ref: "#/definitions/ScrapRequest"
+      responses:
+        200:
+          description: "Got Scraps successfully"
+          schema:
+            $ref: "#/definitions/Scraps"
+        400:
+          description: Invalid input
+        401:
+          description: Authentication failure
+        500:
+          description: Internal error
+definitions:
+  ScrapRequest:
+    type: object
+    properties:
+      uri:
+        type: string
+  Scraps:
+    type: array
+    items:
+      type: object
+      properties:
+        index:
+          type: number
+        id:
+          type: string
+        author:
+          type: string
+        category:
+          type: string
+        link:
+          type: string
+        updated:
+          type: string
+        title:
+          type: string
+  News:
+    type: array
+    items:
+      type: object
+      properties:
+        index:
+          type: number
+        id:
+          type: string
+        author:
+          type: string
+        category:
+          type: string
+        link:
+          type: string
+        updated:
+          type: string
+        title:
+          type: string
